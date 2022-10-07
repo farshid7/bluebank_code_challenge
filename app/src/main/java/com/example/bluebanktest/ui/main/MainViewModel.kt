@@ -7,10 +7,12 @@ import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import com.example.bluebanktest.domain.paging.TransactionPagingDataSource
 import com.example.bluebanktest.domain.repo.TransactionRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(private val repository: TransactionRepository): ViewModel() {
 
-    private val repository =TransactionRepository()
 
     val transaction =
         Pager(config = PagingConfig(pageSize = PAGE_SIZE, prefetchDistance = 2),

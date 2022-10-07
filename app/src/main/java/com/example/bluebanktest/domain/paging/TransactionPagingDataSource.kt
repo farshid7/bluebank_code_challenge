@@ -4,6 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.bluebanktest.domain.entity.Transaction
 import com.example.bluebanktest.domain.repo.TransactionRepository
+import com.example.bluebanktest.domain.repo.TransactionRepositoryImpl
 import com.example.bluebanktest.ui.main.MainViewModel
 
 class TransactionPagingDataSource(private val repository: TransactionRepository) : PagingSource<Int, Transaction>() {
