@@ -11,7 +11,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val repository: TransactionRepository): ViewModel() {
+class MainViewModel @Inject constructor(private val repository: TransactionRepository) :
+    ViewModel() {
 
 
     val transaction =
@@ -20,7 +21,7 @@ class MainViewModel @Inject constructor(private val repository: TransactionRepos
         ).flow.cachedIn(viewModelScope)
 
 
-    companion object{
-        const val PAGE_SIZE=20
+    companion object {
+        const val PAGE_SIZE = 20
     }
 }
